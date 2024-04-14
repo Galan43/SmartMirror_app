@@ -246,12 +246,23 @@ class Botones extends StatelessWidget {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
-              signInWithEmailAndPassword(
-                  _emailController.text, _passwordController.text, context);
+              if (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
+                signInWithEmailAndPassword(
+                  _emailController.text,
+                  _passwordController.text,
+                  context,
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Por favor, ingrese su correo electrónico y contraseña'),
+                  ),
+                );
+              }
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(
-                const Color(0xFF1082e0), 
+                const Color(0xFF1082e0),
               ),
             ),
             child: const Text('Iniciar Sesión', style: TextStyle(color: Colors.white)),
@@ -293,8 +304,8 @@ class Logo extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 150.0, 
-            height: 150.0,
+            width: 100.0, 
+            height: 100.0,
             decoration: const BoxDecoration(
               shape: BoxShape.circle, 
               color: Colors.blue,

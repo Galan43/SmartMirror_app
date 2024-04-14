@@ -50,7 +50,12 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-
+    signingConfigs {
+        debug {
+            storePassword 'android'
+            keyPassword 'android'
+        }
+    }
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

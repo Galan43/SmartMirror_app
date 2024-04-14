@@ -42,9 +42,12 @@ class FondoPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.blue.shade300, Colors.blue],
+          colors: [  
+            Color(0xFF73726f), 
+            Color(0xFF73726f), 
+          ],
           begin: Alignment.centerRight,
           end: Alignment.centerLeft,
         ),
@@ -138,7 +141,7 @@ class DatosPassword extends StatelessWidget {
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(
-                const Color(0xff142047),
+                 const Color(0xFF1082e0),
               ),
             ),
             child: const Text('Restablecer Contraseña',
